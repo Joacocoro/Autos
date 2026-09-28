@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Autitos</title>
+
+    <link rel="stylesheet" href="/Front/css/style.css">
+    <link rel="stylesheet" href="/Front/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Gestión de Vehículos</h2>
+            <p class="text-muted">Listado de Vehículos Registrados</p>
+        </div>
+
+        <!-- Formulario para cargar los vehiculos -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Carga de Vehiculos</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4 col-lg-3">
+                        <label class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="Marca" placeholder="Marca" required>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <label class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="Modelo" placeholder="Modelo" required>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <label class="form-label">Año</label>
+                        <input type="number" class="form-control" id="Año" placeholder="Año" required>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <label class="form-label">Patente</label>
+                        <input type="text" class="form-control" id="Patente" placeholder="Patente" required>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <label class="form-label">Kilometraje</label>
+                        <input type="number" class="form-control" id="Kilometraje" placeholder="Kilometraje" required>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <label class="form-label">Fecha Ingreso</label>
+                        <input type="date" class="form-control" id="FechaIngreso" required>
+                    </div>
+                </div>
+                <div class="mt-4 text-end">
+                    <button type="button" class="btn btn-primary" onclick="AgregarVehiculo()"> Agregar Vehículo</button>
+                </div>
+            </div>
+        </div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-nowrap">Marca</th>
+                    <th class="text-nowrap">Modelo</th>
+                    <th class="text-nowrap">Año</th>
+                    <th class="text-nowrap">Patente</th>
+                    <th class="text-nowrap">Kilometraje</th>
+                    <th class="text-nowrap">Fecha Ingreso</th>
+                    <th class="text-nowrap">Estado</th>
+                    <th class="text-nowrap">Eliminar</th>
+                    <th class="text-nowrap">Editar</th>
+                </tr>
+            </thead>
+
+            <tbody id="Vehiculos">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <!-- modal para editar los datos de los vehiculos -->
+    <div class="modal fade" tabindex="-1" id="editarVehiculo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarVehiculoLabel"> Editar Vehículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" hidden id="VehiculoID">
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <label class="form-label">Marca</label>
+                            <input type="text" class="form-control" id="MarcaEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Modelo</label>
+                            <input type="text" class="form-control" id="ModeloEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Año</label>
+                            <input type="number" class="form-control" id="AñoEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Patente</label>
+                            <input type="text" class="form-control" id="PatenteEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kilometraje</label>
+                            <input type="number" class="form-control" id="KilometrajeEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha de Ingreso</label>
+                            <input type="date" class="form-control" id="FechaIngresoEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Estado</label>
+                            <select class="form-select" id="EstadoEditar">
+                                <option value="true">Disponible</option>
+                                <option value="false">No Disponible</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="btn btn-primary" onclick="EditarVehiculo()">
+                        Guardar cambios
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Front/js/Vehiculos.js"></script>
+    <script src="/Front/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
