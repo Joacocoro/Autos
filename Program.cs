@@ -48,4 +48,25 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+Console.WriteLine("=================================");
+Console.WriteLine("        INICIANDO API");
+Console.WriteLine("=================================");
+Console.WriteLine("API de gestión de vehículos");
+Console.WriteLine("Endpoints disponibles:");
+Console.WriteLine("- GET    /api/CargaVehiculo");
+Console.WriteLine("- POST   /api/CargaVehiculo");
+Console.WriteLine("- PUT    /api/CargaVehiculo");
+Console.WriteLine("- DELETE /api/CargaVehiculo");
+Console.WriteLine("=================================");
+
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("--------------------------------");
+    Console.WriteLine($"Método: {context.Request.Method}");
+    Console.WriteLine($"Ruta: {context.Request.Path}");
+    Console.WriteLine("--------------------------------");
+
+    await next();
+});
+
 app.Run();

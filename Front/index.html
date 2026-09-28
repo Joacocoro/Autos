@@ -7,26 +7,28 @@
 
     <title>Autitos</title>
 
-    <link rel="stylesheet" href="/Front/css/style.css">
     <link rel="stylesheet" href="/Front/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Front/css/style.css">
 </head>
 
 <body>
-
+    <!-- seccion del tittulo de gestion de vehiculos -->
     <div class="container mt-5">
-
-        <div class="text-center mb-4">
-            <h2 class="fw-bold">Gestión de Vehículos</h2>
-            <p class="text-muted">Listado de Vehículos Registrados</p>
-        </div>
-
+        <section id="titulo">
+            <div class="titulo text-center mb-4">
+                <h2 class="fw-bold">Gestión de Vehículos</h2>
+                <p>Listado de Vehículos Registrados</p>
+            </div>
+        </section>
         <!-- Formulario para cargar los vehiculos -->
         <div class="card shadow-sm mb-4">
-            <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">Carga de Vehiculos</h5>
+            <div class="card-titulo">
+                <div class="card-header">
+                    <h5 class="mb-0">Carga de Vehiculos</h5>
+                </div>
             </div>
             <div class="card-body">
-                <div class="row g-3">
+                <div class="row g-3 texto_vehiculos">
                     <div class="col-md-4 col-lg-3">
                         <label class="form-label">Marca</label>
                         <input type="text" class="form-control" id="Marca" placeholder="Marca" required>
@@ -58,89 +60,91 @@
             </div>
         </div>
 
-<div class="card-body">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="text-nowrap">Marca</th>
-                    <th class="text-nowrap">Modelo</th>
-                    <th class="text-nowrap">Año</th>
-                    <th class="text-nowrap">Patente</th>
-                    <th class="text-nowrap">Kilometraje</th>
-                    <th class="text-nowrap">Fecha Ingreso</th>
-                    <th class="text-nowrap">Estado</th>
-                    <th class="text-nowrap">Eliminar</th>
-                    <th class="text-nowrap">Editar</th>
-                </tr>
-            </thead>
+        <!-- seccion donde se mostraran los datos de los vehiculos por la API -->
+        <div class="card-body">
+            <div class="tabla_api table-responsive">
+                <table id="tabla_api" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-nowrap">Marca</th>
+                            <th class="text-nowrap">Modelo</th>
+                            <th class="text-nowrap">Año</th>
+                            <th class="text-nowrap">Patente</th>
+                            <th class="text-nowrap">Kilometraje</th>
+                            <th class="text-nowrap">Fecha Ingreso</th>
+                            <th class="text-nowrap">Estado</th>
+                            <th class="text-nowrap">Eliminar</th>
+                            <th class="text-nowrap">Editar</th>
+                        </tr>
+                    </thead>
 
-            <tbody id="Vehiculos">
-            </tbody>
-        </table>
-    </div>
-</div>
+                    <tbody id="Vehiculos">
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    <!-- modal para editar los datos de los vehiculos -->
-    <div class="modal fade" tabindex="-1" id="editarVehiculo">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editarVehiculoLabel"> Editar Vehículo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" hidden id="VehiculoID">
-                    <div class="mb-3">
+        <!-- modal para editar los datos de los vehiculos -->
+        <div class="modal fade" tabindex="-1" id="editarVehiculo">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header editar_modal">
+                        <h5 class="modal-title" id="editarVehiculoLabel"> Editar Vehículo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" hidden id="VehiculoID">
                         <div class="mb-3">
-                            <label class="form-label">Marca</label>
-                            <input type="text" class="form-control" id="MarcaEditar">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Modelo</label>
-                            <input type="text" class="form-control" id="ModeloEditar">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Año</label>
-                            <input type="number" class="form-control" id="AñoEditar">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Patente</label>
-                            <input type="text" class="form-control" id="PatenteEditar">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Kilometraje</label>
-                            <input type="number" class="form-control" id="KilometrajeEditar">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Fecha de Ingreso</label>
-                            <input type="date" class="form-control" id="FechaIngresoEditar">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Estado</label>
-                            <select class="form-select" id="EstadoEditar">
-                                <option value="true">Disponible</option>
-                                <option value="false">No Disponible</option>
-                            </select>
+                            <div class="mb-3">
+                                <label class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="MarcaEditar">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Modelo</label>
+                                <input type="text" class="form-control" id="ModeloEditar">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Año</label>
+                                <input type="number" class="form-control" id="AñoEditar">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Patente</label>
+                                <input type="text" class="form-control" id="PatenteEditar">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Kilometraje</label>
+                                <input type="number" class="form-control" id="KilometrajeEditar">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Fecha de Ingreso</label>
+                                <input type="date" class="form-control" id="FechaIngresoEditar">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Estado</label>
+                                <select class="form-select" id="EstadoEditar">
+                                    <option value="true">Disponible</option>
+                                    <option value="false">No Disponible</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
+                    <!-- seccion de botones del modal de editar los datos de los vehiculos -->
+                    <div class="modal-footer">
 
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Cancelar
-                    </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
 
-                    <button type="button" class="btn btn-primary" onclick="EditarVehiculo()">
-                        Guardar cambios
-                    </button>
+                        <button type="button" class="btn btn-primary" onclick="EditarVehiculo()">
+                            Guardar cambios
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/Front/js/Vehiculos.js"></script>
-    <script src="/Front/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/Front/js/Vehiculos.js"></script>
+        <script src="/Front/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
