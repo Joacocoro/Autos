@@ -1,0 +1,52 @@
+body{
+    background-image: url('wwwroot/img/fondo_autos.jpg');
+}
+
+/* diseño para el titulo */
+#titulo{
+    margin: auto;
+    background-color: white;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.titulo h2{
+    color: #0d6efd;
+    text-shadow: 2px 2px 0px black;
+}
+
+.texto_vehiculos{
+    font-weight: bold;
+}
+
+/* diseño para el card de Carga de Vehiculos */
+.card-titulo{
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+    background-color: #0d6efd;
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* diseño para la tabla que trae los datos de la API */
+#tabla_api th {
+    text-align: center;
+}
+
+#tabla_api tbody td {
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.tabla_api{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.editar_modal{
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 0px black;
+    background-color: #0d6efd;
+}
