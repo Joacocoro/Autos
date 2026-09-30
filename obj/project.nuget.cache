@@ -138,7 +138,7 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "El paquete \"Microsoft.Build\" 17.8.3 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq",
+      "message": "Package 'Microsoft.Build' 17.8.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3q9-fxm7-j8fq",
       "projectPath": "E:\\APIs\\DespliegueAutos\\Autos\\Autos.csproj",
       "warningLevel": 1,
       "filePath": "E:\\APIs\\DespliegueAutos\\Autos\\Autos.csproj",
@@ -150,7 +150,7 @@
     {
       "code": "NU1901",
       "level": "Warning",
-      "message": "El paquete \"NuGet.Packaging\" 6.11.0 tiene una vulnerabilidad de gravedad baja conocida, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
+      "message": "Package 'NuGet.Packaging' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
       "projectPath": "E:\\APIs\\DespliegueAutos\\Autos\\Autos.csproj",
       "warningLevel": 1,
       "filePath": "E:\\APIs\\DespliegueAutos\\Autos\\Autos.csproj",
@@ -162,7 +162,7 @@
     {
       "code": "NU1901",
       "level": "Warning",
-      "message": "El paquete \"NuGet.Protocol\" 6.11.0 tiene una vulnerabilidad de gravedad baja conocida, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
+      "message": "Package 'NuGet.Protocol' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
       "projectPath": "E:\\APIs\\DespliegueAutos\\Autos\\Autos.csproj",
       "warningLevel": 1,
       "filePath": "E:\\APIs\\DespliegueAutos\\Autos\\Autos.csproj",

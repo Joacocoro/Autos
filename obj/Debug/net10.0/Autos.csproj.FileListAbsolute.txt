@@ -511,3 +511,4 @@ D:\APIs\DespliegueAutos\Autos\obj\Debug\net10.0\Autos.pdb
 D:\APIs\DespliegueAutos\Autos\obj\Debug\net10.0\Autos.genruntimeconfig.cache
 D:\APIs\DespliegueAutos\Autos\obj\Debug\net10.0\ref\Autos.dll
 E:\APIs\DespliegueAutos\Autos\obj\Debug\net10.0\Autos.sourcelink.json
+D:\APIs\DespliegueAutos\Autos\obj\Debug\net10.0\Autos.sourcelink.json

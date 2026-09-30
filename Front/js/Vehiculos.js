@@ -199,8 +199,6 @@ function EditarVehiculo() {
             document.getElementById("PatenteEditar").value = "";
             document.getElementById("FechaIngresoEditar").value = "";
             document.getElementById("KilometrajeEditar").value = "";
-            let modal = bootstrap.Modal.getInstance(document.getElementById("editarVehiculo"));
-            modal.hide();
             ObtenerVehiculos(); //ahora llamo a la funcion para actualizar la tabla
         })
         .catch((error) => {
